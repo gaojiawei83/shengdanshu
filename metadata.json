@@ -1,0 +1,5 @@
+{
+  "name": "3D Love Christmas Tree",
+  "description": "An interactive 3D Christmas tree where couples can hang photos and sticky notes as virtual ornaments. Built with React Three Fiber.",
+  "requestFramePermissions": []
+}
