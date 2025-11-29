@@ -22,7 +22,7 @@ export default function App() {
       return saved ? JSON.parse(saved) : { 
           color: TREE_COLORS.LEAVES_TOP, 
           particleSize: 6.0, 
-          particleOpacity: 0.8 
+          particleOpacity: 1.2 // Increased default opacity
       };
   });
 

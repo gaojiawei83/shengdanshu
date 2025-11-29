@@ -33,7 +33,8 @@ const leafVertexShader = `
     gl_PointSize = uSize * (20.0 / -mvPosition.z);
     
     // Random twinkle alpha
-    vAlpha = 0.6 + 0.4 * sin(uTime * 3.0 + aRandom * 100.0);
+    // Adjusted: Higher base value (0.8) to make tree less transparent
+    vAlpha = 0.8 + 0.2 * sin(uTime * 3.0 + aRandom * 100.0);
   }
 `;
 
@@ -50,7 +51,8 @@ const leafFragmentShader = `
     
     // Soft edge glow
     float strength = 1.0 - (dist * 2.0);
-    strength = pow(strength, 1.5);
+    // Adjusted: Lower power (0.8) makes the particle core fuller/more solid
+    strength = pow(strength, 0.8);
     
     gl_FragColor = vec4(uColor, vAlpha * strength * uOpacity);
   }
@@ -83,7 +85,7 @@ interface TreeLayerProps {
   opacity: number;
 }
 
-const TreeLayer = ({ index, position, scale, color, particleSize, opacity }: TreeLayerProps) => {
+const TreeLayer: React.FC<TreeLayerProps> = ({ index, position, scale, color, particleSize, opacity }) => {
   const meshRef = useRef<THREE.Points>(null);
   const lightsRef = useRef<THREE.Points>(null);
 

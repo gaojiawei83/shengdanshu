@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { X, Camera, StickyNote, Trash2, RotateCw, Palette, Settings, Gift, Upload } from 'lucide-react';
 import { MemoryItem, MemoryType, TreeSettings } from '../types';
@@ -253,11 +252,11 @@ export const UIOverlay: React.FC<UIProps> = ({
 
              <div>
                 <label className="text-xs font-semibold text-gray-500 uppercase flex justify-between">
-                    <span>Transparency</span>
+                    <span>Transparency/Intensity</span>
                     <span>{Math.round(settings.particleOpacity * 100)}%</span>
                 </label>
                 <input 
-                    type="range" min="0.1" max="1" step="0.05"
+                    type="range" min="0.1" max="3.0" step="0.1"
                     value={settings.particleOpacity}
                     onChange={(e) => onSettingsChange({...settings, particleOpacity: parseFloat(e.target.value)})}
                     className="w-full mt-1 accent-pink-500"
