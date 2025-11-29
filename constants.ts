@@ -1,4 +1,5 @@
 
+
 export const TREE_COLORS = {
   LEAVES_TOP: '#2d6a4f',
   LEAVES_BOTTOM: '#1b4332',
@@ -98,4 +99,13 @@ export const INITIAL_MEMORIES = [
     rotation: [0, -0.5, 0],
     createdAt: Date.now(),
   },
+  {
+    id: 'init-2',
+    type: 'photo',
+    // 这是一个类似的黑色轿车图片。请将此 URL 替换为您刚才上传照片的 Base64 编码或图片链接
+    content: "https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1000&auto=format&fit=crop",
+    position: [-0.6, 2.2, 1.0], // 放在树的左侧中间位置
+    rotation: [0, 0.5, 0],
+    createdAt: Date.now(),
+  }
 ];
